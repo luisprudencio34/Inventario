@@ -1,5 +1,4 @@
 package app;
-import static app.DataBase.*;
 
 public class Admin extends User {
 

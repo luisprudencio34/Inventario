@@ -1,5 +1,4 @@
 package app;
-import static app.DataBase.*;
 
 public class Productos {
     int id;

@@ -1,5 +1,7 @@
 package app;
 
+import BD.Metodos_SQL;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,9 +15,11 @@ public class CrearUsuario extends JFrame {
     private JTextPane contraseñaTextPane;
     private JButton guardarButton;
     private JButton regresarButton;
+    private JTextPane userNameTextPane;
+    private JPasswordField contraseñaPasswordField;
     private final JFrame frame;
 
-
+Metodos_SQL metodos = new Metodos_SQL();
     public CrearUsuario() {
         setContentPane(panelMain);
         frame=new JFrame("Crear Usuario");
@@ -30,6 +34,14 @@ public class CrearUsuario extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 MenuInicio page = new MenuInicio();
                 frame.dispose();
+            }
+        });
+        guardarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            metodos.guardar(nombreTextPane.getText(), apellidoTextPane.getText(), userNameTextPane.getText(), correoTextPane.getText(), contraseñaPasswordField.getText(), "2");
+            MenuInicio page = new MenuInicio();
+            frame.dispose();
             }
         });
     }

@@ -1,10 +1,9 @@
-package app;
+package BD;
 
 import javax.swing.*;
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
-import static app.DataBase.*;
+import static BD.DataBase.*;
 
 public class Conexion {
 
@@ -14,7 +13,7 @@ public class Conexion {
     public static Connection getConnection(){
         Connection connection = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(CLASE);
             connection = (Connection) DriverManager.getConnection(URL, USERNAME, PASSWORD);
             if (connection != null){
             JOptionPane.showMessageDialog(null, "Se establecio la conexión :)");
