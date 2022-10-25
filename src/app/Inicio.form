@@ -18,8 +18,9 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <icon value="app/img/User.png"/>
-          <text value=""/>
+          <font name="Consolas" size="36" style="1"/>
+          <foreground color="-1"/>
+          <text value="USUARIO"/>
         </properties>
       </component>
       <component id="7a9b5" class="javax.swing.JLabel">
@@ -27,8 +28,9 @@
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <icon value="app/img/pass.png"/>
-          <text value=""/>
+          <font name="Consolas" size="36" style="1"/>
+          <foreground color="-1"/>
+          <text value="CONTRASEÑA"/>
         </properties>
       </component>
       <component id="24002" class="javax.swing.JPasswordField" binding="inputContraseña">
@@ -66,8 +68,9 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <icon value="app/img/head.png"/>
-              <text value=""/>
+              <font name="Consolas" size="36" style="1"/>
+              <foreground color="-1"/>
+              <text value="INICIO DE SESIÓN"/>
             </properties>
           </component>
           <vspacer id="265d0">

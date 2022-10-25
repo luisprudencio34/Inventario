@@ -24,8 +24,15 @@ public class Menu extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent e) {
-            Inicio page = new Inicio();
+            CrearUsuario page = new CrearUsuario();
             page.setVisible(true);
+            }
+        });
+        iniciarSesionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Inicio page = new Inicio();
+                page.setVisible(true);
             }
         });
     }
