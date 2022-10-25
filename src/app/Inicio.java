@@ -10,6 +10,7 @@ public class Inicio extends JFrame{
     private JPanel panelMain;
     private JPasswordField inputContraseña;
     private JTextPane inputUsuario;
+    private JButton regresar_button;
     private JFrame frame;
 
     private JMenuBar menuBar;
@@ -48,7 +49,7 @@ public class Inicio extends JFrame{
                     IngresoProducto page = new IngresoProducto();
 
                     //make page visible to the user
-                    page.setVisible(true);
+
 
                     frame.dispose();
                     //create a welcome label and set it to the new page
@@ -63,6 +64,13 @@ public class Inicio extends JFrame{
             }
 
 
+        });
+        regresar_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MenuInicio page = new MenuInicio();
+                frame.dispose();
+            }
         });
     }
 

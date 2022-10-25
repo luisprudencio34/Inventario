@@ -2,6 +2,8 @@ package app;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class IngresoProducto extends JFrame{
     private JPanel panelMain;
@@ -11,6 +13,7 @@ public class IngresoProducto extends JFrame{
     private JTextPane textPane4;
     private JButton button1;
     private JTextPane textPane5;
+    private JButton regresar_button;
 
     private JFrame frame;
 
@@ -25,5 +28,11 @@ public class IngresoProducto extends JFrame{
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        regresar_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 }
