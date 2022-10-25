@@ -31,7 +31,7 @@ public class MenuInicio extends JFrame{
         iniciarSesionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Inicio page = new Inicio();
+                InicioSesion page = new InicioSesion();
                 frame.dispose();
             }
         });

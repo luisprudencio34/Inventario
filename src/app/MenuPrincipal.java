@@ -6,6 +6,8 @@ import java.awt.*;
 public class MenuPrincipal extends JFrame {
     private JFrame frame;
     private JPanel panelMain;
+    private JButton ConsultarProductobutton;
+    private JButton ingresarProducto_button;
 
     public MenuPrincipal(){
         setContentPane(panelMain);

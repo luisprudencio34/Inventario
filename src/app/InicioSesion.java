@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Inicio extends JFrame{
+public class InicioSesion extends JFrame{
     private JButton butto_msg;
     private JPanel panelMain;
     private JPasswordField inputContraseña;
@@ -18,7 +18,7 @@ public class Inicio extends JFrame{
     private JMenuItem salir;
 
 
-    public Inicio(){
+    public InicioSesion(){
         setContentPane(panelMain);
         frame=new JFrame("Inicio de sesión");
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -46,7 +46,7 @@ public class Inicio extends JFrame{
                 if (userValue.equals("Usuario") && passValue.equals("1234")) {  //if authentic, navigate user to a new page
 
                     //create instance of the NewPage
-                    IngresoProducto page = new IngresoProducto();
+                    MenuPrincipal page = new MenuPrincipal();
 
                     //make page visible to the user
 
