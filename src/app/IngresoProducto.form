@@ -22,6 +22,7 @@
         </constraints>
         <properties>
           <icon value="app/img/codigoProduct.png"/>
+          <labelFor value="e675a"/>
           <text value=""/>
         </properties>
       </component>
@@ -31,6 +32,7 @@
         </constraints>
         <properties>
           <icon value="app/img/NombreProducto.png"/>
+          <labelFor value="d8237"/>
           <text value=""/>
         </properties>
       </component>
@@ -49,10 +51,11 @@
         </constraints>
         <properties>
           <icon value="app/img/existenciaProduct.png"/>
+          <labelFor value="44860"/>
           <text value=""/>
         </properties>
       </component>
-      <component id="d8237" class="javax.swing.JTextPane" binding="textPane1" default-binding="true">
+      <component id="d8237" class="javax.swing.JTextPane" binding="nombreTextPane">
         <constraints>
           <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
@@ -62,7 +65,7 @@
           <background color="-1315861"/>
         </properties>
       </component>
-      <component id="44860" class="javax.swing.JTextPane" binding="textPane2" default-binding="true">
+      <component id="44860" class="javax.swing.JTextPane" binding="existenciaTextPane">
         <constraints>
           <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
@@ -72,7 +75,7 @@
           <background color="-1315861"/>
         </properties>
       </component>
-      <component id="e675a" class="javax.swing.JTextPane" binding="textPane3" default-binding="true">
+      <component id="e675a" class="javax.swing.JTextPane" binding="codigoTextPane">
         <constraints>
           <grid row="4" column="4" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="450" height="50"/>
@@ -88,10 +91,11 @@
         </constraints>
         <properties>
           <icon value="app/img/precioProduct.png"/>
+          <labelFor value="39722"/>
           <text value=""/>
         </properties>
       </component>
-      <component id="39722" class="javax.swing.JTextPane" binding="textPane4" default-binding="true">
+      <component id="39722" class="javax.swing.JTextPane" binding="precioTextPane">
         <constraints>
           <grid row="8" column="7" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
@@ -107,6 +111,7 @@
         </constraints>
         <properties>
           <icon value="app/img/descripcionProduct.png"/>
+          <labelFor value="8581e"/>
           <text value=""/>
         </properties>
       </component>
@@ -125,7 +130,7 @@
           <grid row="5" column="7" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <component id="f4803" class="javax.swing.JButton" binding="button1" default-binding="true">
+      <component id="f4803" class="javax.swing.JButton" binding="guardarButton">
         <constraints>
           <grid row="12" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -156,7 +161,7 @@
           <grid row="13" column="7" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <component id="8581e" class="javax.swing.JTextPane" binding="textPane5" default-binding="true">
+      <component id="8581e" class="javax.swing.JTextPane" binding="descripcionTextPane">
         <constraints>
           <grid row="10" column="3" row-span="1" col-span="5" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
@@ -181,7 +186,7 @@
           <grid row="2" column="7" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <component id="7fac9" class="javax.swing.JButton" binding="regresar_button">
+      <component id="7fac9" class="javax.swing.JButton" binding="regresarButton">
         <constraints>
           <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>

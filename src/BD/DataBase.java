@@ -6,10 +6,11 @@ public class DataBase {
     public  static final String PASSWORD = "1234";
     public static final String CLASE = "com.mysql.cj.jdbc.Driver";
 
-    public  static final String PRODUCTO = "productos";
+    public  static final String PRODUCTO = "Productos";
     public  static final String PRODUCTO_ID = "ID_Producto";
     public  static final String PRODUCTO_NOMBRE = "NombreProducto";
     public  static final String PRODUCTO_EXISTENCIA = "ExistenciaProducto";
+    public  static final String PRODUCTO_PRECIO = "PrecioProducto";
     public  static final String PRODUCTO_DESCRIPCION = "DescripcionProducto";
 
     public  static final String USUARIO = "Usuarios";

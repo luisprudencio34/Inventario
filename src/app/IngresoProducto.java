@@ -2,21 +2,22 @@ package app;
 
 import javax.swing.*;
 import java.awt.*;
+import BD.Metodos_SQL;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class IngresoProducto extends JFrame{
     private JPanel panelMain;
-    private JTextPane textPane1;
-    private JTextPane textPane2;
-    private JTextPane textPane3;
-    private JTextPane textPane4;
-    private JButton button1;
-    private JTextPane textPane5;
-    private JButton regresar_button;
+    private JTextPane nombreTextPane;
+    private JTextPane existenciaTextPane;
+    private JTextPane codigoTextPane;
+    private JTextPane precioTextPane;
+    private JButton guardarButton;
+    private JTextPane descripcionTextPane;
+    private JButton regresarButton;
 
     private JFrame frame;
-
+    Metodos_SQL metodos = new Metodos_SQL();
     public IngresoProducto(){
         super("Inicio");
 
@@ -28,11 +29,20 @@ public class IngresoProducto extends JFrame{
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        regresar_button.addActionListener(new ActionListener() {
+        regresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
             MenuPrincipal page = new MenuPrincipal();
             frame.dispose();
+            }
+        });
+        guardarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                metodos.guardarProducto(nombreTextPane.getText(), existenciaTextPane.getText(), precioTextPane.getText(), descripcionTextPane.getText());
+                MenuInicio page = new MenuInicio();
+                frame.dispose();
+
             }
         });
     }

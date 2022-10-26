@@ -39,7 +39,7 @@ Metodos_SQL metodos = new Metodos_SQL();
         guardarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            metodos.guardar(nombreTextPane.getText(), apellidoTextPane.getText(), userNameTextPane.getText(), correoTextPane.getText(), contraseñaPasswordField.getText(), "2");
+            metodos.guardarUsuario(nombreTextPane.getText(), apellidoTextPane.getText(), userNameTextPane.getText(), correoTextPane.getText(), contraseñaPasswordField.getText(), "2");
             MenuInicio page = new MenuInicio();
             frame.dispose();
             }
