@@ -36,5 +36,12 @@ public class MenuPrincipal extends JFrame {
                 frame.dispose();
             }
         });
+        ConsultarProductobutton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ConsultarProducto page = new ConsultarProducto();
+                frame.dispose();
+            }
+        });
     }
 }
