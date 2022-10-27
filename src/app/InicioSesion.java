@@ -1,23 +1,25 @@
 package app;
 
+import BD.Metodos_SQL;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class InicioSesion extends JFrame{
-    private JButton butto_msg;
+    private JButton ingresarButton;
     private JPanel panelMain;
     private JPasswordField inputContraseña;
     private JTextPane inputUsuario;
-    private JButton regresar_button;
+    private JButton regresarButton;
     private JFrame frame;
 
     private JMenuBar menuBar;
     private JMenu archivo;
     private JMenuItem salir;
 
-
+    Metodos_SQL metodos = new Metodos_SQL();
     public InicioSesion(){
         setContentPane(panelMain);
         frame=new JFrame("Inicio de sesión");
@@ -34,7 +36,7 @@ public class InicioSesion extends JFrame{
         salir = new JMenuItem("Salir");
         setJMenuBar(menuBar);*/
 
-        butto_msg.addActionListener(new ActionListener() {
+       /* butto_msg.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -54,7 +56,7 @@ public class InicioSesion extends JFrame{
                     frame.dispose();
                     //create a welcome label and set it to the new page
                     /*JLabel wel_label = new JLabel("Welcome: "+userValue);
-                    page.getContentPane().add(wel_label);*/
+                    page.getContentPane().add(wel_label);
 
                 }
                 else{
@@ -64,12 +66,27 @@ public class InicioSesion extends JFrame{
             }
 
 
-        });
-        regresar_button.addActionListener(new ActionListener() {
+        });*/
+        regresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 MenuInicio page = new MenuInicio();
                 frame.dispose();
+            }
+        });
+        ingresarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String busquedaUsuario = metodos.buscarUsuarioRegistrado(inputUsuario.getText(), inputContraseña.getText());
+
+                if(inputUsuario.getText().equals("root")&& inputContraseña.getText().equals("root")){
+                    MenuPrincipal page = new MenuPrincipal();
+                    frame.dispose();
+                    JOptionPane.showMessageDialog(null, "Bienvenido iniciaste sesion como root");
+                }else if (busquedaUsuario.equals("Usuario encontrado")){
+                    MenuPrincipal page = new MenuPrincipal();
+                    frame.dispose();
+                }
             }
         });
     }

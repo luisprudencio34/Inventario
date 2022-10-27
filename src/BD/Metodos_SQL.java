@@ -58,4 +58,72 @@ public class Metodos_SQL {
         }
         return resultado;
     }
+
+    /*public static String buscarNombre(){
+    String busquedaNombre = null;
+    Connection connection = null;
+    try {
+        connection = Conexion.getConnection();
+        String queryBuscar = ("SELECT "+" FROM " +USUARIO+" WHERE ");
+        preparedStatement = connection.prepareStatement(queryBuscar);
+        resultSet = preparedStatement.executeQuery();
+    }catch (Exception e){
+
+    }
+        return null;
+    }*/
+
+    /*public boolean buscarUsuarioInicioSesion(String usuario, String contrasena) {
+        boolean iniciarSesion = false;
+        Connection connection = null;
+        try {
+
+            connection = Conexion.getConnection();
+            String consulta = "SELECT usuario_generado_automaticamente,contrasena FROM usuarios WHERE usuario_generado_automaticamente = ? AND contrasena = ?";
+            preparedStatement = connection.prepareStatement(consulta);
+            preparedStatement.setString(1, usuario);
+            preparedStatement.setString(2, contrasena);
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                iniciarSesion = true;//El usuario puede iniciar Sesion por que esta registrado en la BD
+            } else {
+                iniciarSesion = false;//El usuario NO puede iniciar sesion por que no esta registrado en la BD
+            }
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("Error: " + e);
+            }
+        }
+
+        System.out.println("El valor de iniciarSesion en el metodo es: " + iniciarSesion);
+        return iniciarSesion;
+    }*/
+
+    public static String buscarUsuarioRegistrado (String usuario, String contraseña){
+        String busquedaUsuario = null;
+        Connection connection = null;
+
+        try {
+            connection = Conexion.getConnection();
+            String queryBuscarUsuario = ("SELECT "+USUARIO_NOMBRE+","+USUARIO_CORREO+","+USUARIO_CONTRASEÑA
+                    +" FROM "+USUARIO+" WHERE "+USUARIO_USERNAME+" = '"+usuario+"' && "+USUARIO_CONTRASEÑA+" = '"+contraseña+"'");
+            preparedStatement = connection.prepareStatement(queryBuscarUsuario);
+            resultSet =  preparedStatement.executeQuery();
+            if(resultSet.next()){
+                busquedaUsuario = "Usuario encontrado";
+            }else{
+                busquedaUsuario = "Usuario no encontrado";
+            }
+            connection.close();
+        }catch (Exception e){
+
+        }
+
+        return busquedaUsuario;
+    }
 }

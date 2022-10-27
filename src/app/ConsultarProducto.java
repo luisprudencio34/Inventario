@@ -7,7 +7,6 @@ public class ConsultarProducto extends JFrame{
 
     private JButton regresarButton;
     private JPanel panelMain;
-    private JTable productosTable;
     private JFrame frame;
 
     public ConsultarProducto(){
