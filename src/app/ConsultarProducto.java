@@ -5,8 +5,9 @@ import java.awt.*;
 
 public class ConsultarProducto extends JFrame{
 
-    private JButton button1;
+    private JButton regresarButton;
     private JPanel panelMain;
+    private JTable productosTable;
     private JFrame frame;
 
     public ConsultarProducto(){
@@ -21,4 +22,6 @@ public class ConsultarProducto extends JFrame{
         frame.setVisible(true);
 
     }
+
+
 }
