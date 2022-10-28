@@ -42,6 +42,7 @@ Metodos_SQL metodos = new Metodos_SQL();
             metodos.guardarUsuario(nombreTextPane.getText(), apellidoTextPane.getText(), userNameTextPane.getText(), correoTextPane.getText(), contraseñaPasswordField.getText(), "2");
             MenuInicio page = new MenuInicio();
             frame.dispose();
+
             }
         });
     }

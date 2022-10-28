@@ -1,5 +1,8 @@
 package BD;
 
+import org.jetbrains.annotations.Nullable;
+
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -61,66 +64,48 @@ public class Metodos_SQL {
         return resultado;
     }
 
-    public static String consultarProducto (String id){
-        String consulta =null;
+    public int consultarProducto (String id){
+        int consulta =0;
+        String label1, label2, label3;
         Connection connection = null;
         try{
+
             connection = Conexion.getConnection();
             String queryConsultarProducto =  ("SELECT "+PRODUCTO_NOMBRE+", "+PRODUCTO_PRECIO+", "
-                    +PRODUCTO_PRECIO+" from "+ PRODUCTO + " where "+PRODUCTO_ID+"="+id);
+                    +PRODUCTO_DESCRIPCION+" FROM "+ PRODUCTO + " WHERE "+PRODUCTO_ID+" = ?");
+            JOptionPane.showMessageDialog(null, queryConsultarProducto);
             preparedStatement = connection.prepareStatement(queryConsultarProducto);
-            resultSet = preparedStatement.executeQuery();
-            connection.close();
-        }catch (Exception e){
+            preparedStatement.setString(1,id);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
+
+            if(resultSet.next()==true)
+            {
+                String nombre = resultSet.getString(1);
+                String precio = resultSet.getString(2);
+                String descripcion = resultSet.getString(3);
+
+                label1=(nombre);
+                label2=(precio);
+                label3=(descripcion);
+
+            }
+            else
+            {
+                label1=("");
+                label2=("");
+                label3=("");
+                JOptionPane.showMessageDialog(null,"Invalid Employee No");
+
+            }
+            JOptionPane.showMessageDialog(null, label1+label2+label3);
+        }catch (SQLException ex){
+            ex.printStackTrace();
         }
-        return null;
+        return consulta;
     }
 
-    /*public static String buscarNombre(){
-    String busquedaNombre = null;
-    Connection connection = null;
-    try {
-        connection = Conexion.getConnection();
-        String queryBuscar = ("SELECT "+" FROM " +USUARIO+" WHERE ");
-        preparedStatement = connection.prepareStatement(queryBuscar);
-        resultSet = preparedStatement.executeQuery();
-    }catch (Exception e){
 
-    }
-        return null;
-    }*/
-
-    /*public boolean buscarUsuarioInicioSesion(String usuario, String contrasena) {
-        boolean iniciarSesion = false;
-        Connection connection = null;
-        try {
-
-            connection = Conexion.getConnection();
-            String consulta = "SELECT usuario_generado_automaticamente,contrasena FROM usuarios WHERE usuario_generado_automaticamente = ? AND contrasena = ?";
-            preparedStatement = connection.prepareStatement(consulta);
-            preparedStatement.setString(1, usuario);
-            preparedStatement.setString(2, contrasena);
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                iniciarSesion = true;//El usuario puede iniciar Sesion por que esta registrado en la BD
-            } else {
-                iniciarSesion = false;//El usuario NO puede iniciar sesion por que no esta registrado en la BD
-            }
-            connection.close();
-        } catch (SQLException e) {
-            System.out.println("Error: " + e);
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                System.out.println("Error: " + e);
-            }
-        }
-
-        System.out.println("El valor de iniciarSesion en el metodo es: " + iniciarSesion);
-        return iniciarSesion;
-    }*/
 
     public static String buscarUsuarioRegistrado (String usuario, String contraseña){
         String busquedaUsuario = null;
@@ -144,5 +129,6 @@ public class Metodos_SQL {
 
         return busquedaUsuario;
     }
+
 
 }
