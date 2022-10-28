@@ -14,6 +14,7 @@ public class Metodos_SQL {
     public static String sql;
     public static int restaldoNum = 0;
 
+
     public int guardarUsuario(String nombre, String apellido,String userName, String correo, String contraseña, String tipo){
         int resultado = 0;
         Connection connection = null;
@@ -58,6 +59,22 @@ public class Metodos_SQL {
             e.printStackTrace();
         }
         return resultado;
+    }
+
+    public static String consultarProducto (String id){
+        String consulta =null;
+        Connection connection = null;
+        try{
+            connection = Conexion.getConnection();
+            String queryConsultarProducto =  ("SELECT "+PRODUCTO_NOMBRE+", "+PRODUCTO_PRECIO+", "
+                    +PRODUCTO_PRECIO+" from "+ PRODUCTO + " where "+PRODUCTO_ID+"="+id);
+            preparedStatement = connection.prepareStatement(queryConsultarProducto);
+            resultSet = preparedStatement.executeQuery();
+            connection.close();
+        }catch (Exception e){
+
+        }
+        return null;
     }
 
     /*public static String buscarNombre(){
@@ -127,4 +144,5 @@ public class Metodos_SQL {
 
         return busquedaUsuario;
     }
+
 }
