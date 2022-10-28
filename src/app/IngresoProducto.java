@@ -39,8 +39,8 @@ public class IngresoProducto extends JFrame{
         guardarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                metodos.guardarProducto(nombreTextPane.getText(), existenciaTextPane.getText(), precioTextPane.getText(), descripcionTextPane.getText());
-                MenuInicio page = new MenuInicio();
+                metodos.guardarProducto(codigoTextPane.getText(), nombreTextPane.getText(), existenciaTextPane.getText(), precioTextPane.getText(), descripcionTextPane.getText());
+                MenuPrincipal page = new MenuPrincipal();
                 frame.dispose();
 
             }

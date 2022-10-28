@@ -23,7 +23,7 @@ Metodos_SQL metodos = new Metodos_SQL();
     public CrearUsuario() {
         setContentPane(panelMain);
         frame=new JFrame("Crear Usuario");
-        frame.setPreferredSize(new Dimension(600, 800));
+        frame.setPreferredSize(new Dimension(625, 800));
         frame.setResizable(true);
         frame.add(panelMain);
         frame.pack();

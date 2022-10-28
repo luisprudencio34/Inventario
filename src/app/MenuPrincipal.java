@@ -16,7 +16,7 @@ public class MenuPrincipal extends JFrame {
         setContentPane(panelMain);
         frame=new JFrame("Menú Principal");
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(900,600));
+        frame.setPreferredSize(new Dimension(700,600));
         frame.setResizable(true);
         frame.add(panelMain);
         frame.pack();

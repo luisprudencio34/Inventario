@@ -36,19 +36,20 @@ public class Metodos_SQL {
         }
         return resultado;
     }
-    public int guardarProducto(String nombre, String existencia,String precio, String descripcion){
+    public int guardarProducto(String id, String nombre, String existencia,String precio, String descripcion){
         int resultado = 0;
         Connection connection = null;
 
-        String queryGuardar = ("INSERT INTO " + PRODUCTO + " ("+ PRODUCTO_NOMBRE + ", "+PRODUCTO_EXISTENCIA+", "+PRODUCTO_PRECIO+", "
-                +PRODUCTO_DESCRIPCION+ ")"+" VALUES (?,?,?,?)");
+        String queryGuardar = ("INSERT INTO " + PRODUCTO + " ("+PRODUCTO_ID+", "+ PRODUCTO_NOMBRE + ", "+PRODUCTO_EXISTENCIA+", "+PRODUCTO_PRECIO+", "
+                +PRODUCTO_DESCRIPCION+ ")"+" VALUES (?,?,?,?,?)");
         try {
             connection = Conexion.getConnection();
             preparedStatement = connection.prepareStatement(queryGuardar);
-            preparedStatement.setString(1,nombre);
-            preparedStatement.setString(2,existencia);
-            preparedStatement.setString(3,precio);
-            preparedStatement.setString(4,descripcion);
+            preparedStatement.setString(1,id);
+            preparedStatement.setString(2,nombre);
+            preparedStatement.setString(3,existencia);
+            preparedStatement.setString(4,precio);
+            preparedStatement.setString(5,descripcion);
 
 
             resultado = preparedStatement.executeUpdate();
