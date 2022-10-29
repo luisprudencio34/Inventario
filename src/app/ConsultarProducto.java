@@ -25,9 +25,11 @@ public class ConsultarProducto extends JFrame{
     private JTextField consultaTextField;
     private JButton CerrarSesionButton;
     private JButton consultarButton;
-    private JLabel label1;
-    private JLabel label2;
-    private JLabel label3;
+    private JLabel idlabel;
+    private JLabel nombrelabel;
+    private JLabel existencialabel;
+    private JLabel preciolabel;
+
     public static PreparedStatement preparedStatement;
 
     private JFrame frame;
@@ -64,7 +66,6 @@ public class ConsultarProducto extends JFrame{
                     connection = Conexion.getConnection();
                     String queryConsultarProducto =  ("SELECT "+PRODUCTO_NOMBRE+", "+PRODUCTO_PRECIO+", "
                             +PRODUCTO_DESCRIPCION+" FROM "+ PRODUCTO + " WHERE "+PRODUCTO_ID+" = ?");
-                    JOptionPane.showMessageDialog(null, queryConsultarProducto);
                     preparedStatement = connection.prepareStatement(queryConsultarProducto);
                     preparedStatement.setString(1, consultaTextField.getText());
                     ResultSet resultSet = preparedStatement.executeQuery();
@@ -76,29 +77,23 @@ public class ConsultarProducto extends JFrame{
                         String precio = resultSet.getString(2);
                         String descripcion = resultSet.getString(3);
 
-                        label1.setText(nombre);
-                        label2.setText(precio);
-                        label3.setText(descripcion);
+                        nombrelabel.setText(nombre);
+                        preciolabel.setText("$ "+precio);
+                        existencialabel.setText(descripcion);
 
                     }
                     else
                     {
-                        label1.setText("");
-                        label2.setText("");
-                        label3.setText("");
-                        JOptionPane.showMessageDialog(null,"Invalid Employee No");
+                        nombrelabel.setText("");
+                        preciolabel.setText("");
+                        existencialabel.setText("");
+                        JOptionPane.showMessageDialog(null,"ID o Nombre invalidos");
 
                     }
 
                 }catch (SQLException ex){
                     ex.printStackTrace();
                 }
-
-
-
-
-
-
             }
         });
     }
