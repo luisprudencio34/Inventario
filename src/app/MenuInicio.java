@@ -13,7 +13,7 @@ public class MenuInicio extends JFrame{
     public MenuInicio() {
         setContentPane(panelMain);
         frame=new JFrame("Menu");
-        frame.setPreferredSize(new Dimension(350, 550));
+        frame.setPreferredSize(new Dimension(400, 600));
         frame.setResizable(true);
         frame.add(panelMain);
         frame.pack();

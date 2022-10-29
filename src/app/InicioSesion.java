@@ -82,10 +82,12 @@ public class InicioSesion extends JFrame{
                 if(inputUsuario.getText().equals("root")&& inputContraseña.getText().equals("root")){
                     MenuPrincipal page = new MenuPrincipal();
                     frame.dispose();
-                    JOptionPane.showMessageDialog(null, "Bienvenido iniciaste sesion como root");
+
                 }else if (busquedaUsuario.equals("Usuario encontrado")){
                     MenuPrincipal page = new MenuPrincipal();
                     frame.dispose();
+                }else {
+                    JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
                 }
             }
         });

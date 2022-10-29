@@ -103,6 +103,7 @@
           <icon value="app/img/ingresar2.png"/>
           <opaque value="false"/>
           <requestFocusEnabled value="false"/>
+          <rolloverEnabled value="false"/>
           <text value=""/>
           <visible value="true"/>
         </properties>
@@ -133,11 +134,15 @@
         </constraints>
         <properties>
           <background color="-1"/>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="true"/>
           <focusPainted value="false"/>
           <font name="Consolas" size="36" style="1"/>
           <foreground color="-16777216"/>
           <requestFocusEnabled value="false"/>
+          <rolloverEnabled value="false"/>
           <text value="REGRESAR"/>
+          <verifyInputWhenFocusTarget value="false"/>
         </properties>
       </component>
       <hspacer id="63eee">

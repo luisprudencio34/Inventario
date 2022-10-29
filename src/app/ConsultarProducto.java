@@ -1,8 +1,6 @@
 package app;
 
 import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +8,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Vector;
 
 import BD.Conexion;
 import BD.Metodos_SQL;
@@ -29,6 +26,8 @@ public class ConsultarProducto extends JFrame{
     private JLabel nombrelabel;
     private JLabel existencialabel;
     private JLabel preciolabel;
+    private JButton LIMPIARButton;
+    private JLabel descripcionLabel;
 
     public static PreparedStatement preparedStatement;
 
@@ -40,9 +39,9 @@ public class ConsultarProducto extends JFrame{
     public ConsultarProducto(){
 
         setContentPane(panelMain);
-        frame=new JFrame("Menú Principal");
+        frame=new JFrame("Consulta de productos");
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(900,600));
+        frame.setPreferredSize(new Dimension(1030,640));
         frame.setResizable(true);
         frame.add(panelMain);
         frame.pack();
@@ -64,29 +63,36 @@ public class ConsultarProducto extends JFrame{
                 try{
 
                     connection = Conexion.getConnection();
-                    String queryConsultarProducto =  ("SELECT "+PRODUCTO_NOMBRE+", "+PRODUCTO_PRECIO+", "
-                            +PRODUCTO_DESCRIPCION+" FROM "+ PRODUCTO + " WHERE "+PRODUCTO_ID+" = ?");
+                    String queryConsultarProducto =  ("SELECT "+PRODUCTO_ID+", "+PRODUCTO_NOMBRE+", "+PRODUCTO_PRECIO+", "
+                            +PRODUCTO_EXISTENCIA+", "+PRODUCTO_DESCRIPCION+" FROM "+ PRODUCTO + " WHERE "+PRODUCTO_ID+" = ? OR "+PRODUCTO_NOMBRE+" = ?");
                     preparedStatement = connection.prepareStatement(queryConsultarProducto);
                     preparedStatement.setString(1, consultaTextField.getText());
+                    preparedStatement.setString(2, consultaTextField.getText());
                     ResultSet resultSet = preparedStatement.executeQuery();
 
 
                     if(resultSet.next()==true)
                     {
-                        String nombre = resultSet.getString(1);
-                        String precio = resultSet.getString(2);
-                        String descripcion = resultSet.getString(3);
+                        String id = resultSet.getString(1);
+                        String nombre = resultSet.getString(2);
+                        String precio = resultSet.getString(3);
+                        String existencia = resultSet.getString(4);
+                        String descripcion = resultSet.getString(5);
 
+                        idlabel.setText(id);
                         nombrelabel.setText(nombre);
                         preciolabel.setText("$ "+precio);
-                        existencialabel.setText(descripcion);
+                        existencialabel.setText(existencia);
+                        descripcionLabel.setText(descripcion);
 
                     }
                     else
                     {
+                        idlabel.setText("");
                         nombrelabel.setText("");
                         preciolabel.setText("");
                         existencialabel.setText("");
+                        descripcionLabel.setText("");
                         JOptionPane.showMessageDialog(null,"ID o Nombre invalidos");
 
                     }
@@ -94,6 +100,17 @@ public class ConsultarProducto extends JFrame{
                 }catch (SQLException ex){
                     ex.printStackTrace();
                 }
+            }
+        });
+        LIMPIARButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                consultaTextField.setText("");
+                idlabel.setText("");
+                nombrelabel.setText("");
+                preciolabel.setText("");
+                existencialabel.setText("");
+                descripcionLabel.setText("");
             }
         });
     }

@@ -16,7 +16,7 @@ public class Conexion {
             Class.forName(CLASE);
             connection = (Connection) DriverManager.getConnection(URL, USERNAME, PASSWORD);
             if (connection != null){
-            JOptionPane.showMessageDialog(null, "Se establecio la conexión :)");
+
             }
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e);
