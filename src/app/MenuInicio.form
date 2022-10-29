@@ -15,15 +15,16 @@
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-16777216"/>
+          <background color="-1"/>
           <borderPainted value="false"/>
           <focusPainted value="false"/>
           <focusable value="false"/>
           <font name="Consolas" size="24" style="1"/>
           <foreground color="-1"/>
           <horizontalTextPosition value="11"/>
+          <icon value="app/img/iniciarSesion.png"/>
           <requestFocusEnabled value="false"/>
-          <text value="Iniciar Sesión"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="7e837" class="javax.swing.JButton" binding="crearUsuarioButton" default-binding="true">
@@ -31,14 +32,15 @@
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-16777216"/>
+          <background color="-1"/>
           <borderPainted value="false"/>
           <contentAreaFilled value="true"/>
           <focusPainted value="false"/>
           <font name="Consolas" size="24" style="1"/>
           <foreground color="-1"/>
+          <icon value="app/img/registrarUs.png"/>
           <requestFocusEnabled value="false"/>
-          <text value="Crear Usuario"/>
+          <text value=""/>
           <verifyInputWhenFocusTarget value="false"/>
           <verticalAlignment value="0"/>
         </properties>

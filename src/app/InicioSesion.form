@@ -133,15 +133,16 @@
           <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-1"/>
+          <background color="-16777216"/>
           <borderPainted value="false"/>
           <contentAreaFilled value="true"/>
           <focusPainted value="false"/>
           <font name="Consolas" size="36" style="1"/>
           <foreground color="-16777216"/>
+          <icon value="app/img/regresarBlanco.png"/>
           <requestFocusEnabled value="false"/>
           <rolloverEnabled value="false"/>
-          <text value="REGRESAR"/>
+          <text value=""/>
           <verifyInputWhenFocusTarget value="false"/>
         </properties>
       </component>

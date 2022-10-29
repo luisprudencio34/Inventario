@@ -15,6 +15,7 @@ public class Conexion {
         try {
             Class.forName(CLASE);
             connection = (Connection) DriverManager.getConnection(URL, USERNAME, PASSWORD);
+
             if (connection != null){
 
             }

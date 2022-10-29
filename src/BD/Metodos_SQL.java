@@ -124,7 +124,7 @@ public class Metodos_SQL {
             }
             connection.close();
         }catch (Exception e){
-
+            e.printStackTrace();
         }
 
         return busquedaUsuario;

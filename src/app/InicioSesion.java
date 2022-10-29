@@ -31,42 +31,7 @@ public class InicioSesion extends JFrame{
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-        /*menuBar = new JMenuBar();
-        archivo = new JMenu("Archivo");
-        salir = new JMenuItem("Salir");
-        setJMenuBar(menuBar);*/
 
-       /* butto_msg.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                String userValue = inputUsuario.getText();        //get user entered username from the textField1
-                String passValue = inputContraseña.getText();        //get user entered pasword from the textField2
-
-                //check whether the credentials are authentic or not
-                if (userValue.equals("Usuario") && passValue.equals("1234")) {  //if authentic, navigate user to a new page
-
-                    //create instance of the NewPage
-                    MenuPrincipal page = new MenuPrincipal();
-
-                    //make page visible to the user
-
-
-                    frame.dispose();
-                    //create a welcome label and set it to the new page
-                    /*JLabel wel_label = new JLabel("Welcome: "+userValue);
-                    page.getContentPane().add(wel_label);
-
-                }
-                else{
-                    //show error message
-                    JOptionPane.showMessageDialog(null,"Please enter valid username and password");
-                }
-            }
-
-
-        });*/
         regresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
