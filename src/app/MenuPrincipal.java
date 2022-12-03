@@ -11,6 +11,7 @@ public class MenuPrincipal extends JFrame {
     private JButton ConsultarProductobutton;
     private JButton ingresarProducto_button;
     private JButton regresarButton;
+    private JButton button1;
 
     public MenuPrincipal(){
         setContentPane(panelMain);
@@ -40,6 +41,13 @@ public class MenuPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ConsultarProducto page = new ConsultarProducto();
+                frame.dispose();
+            }
+        });
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                EditarProducto page = new EditarProducto();
                 frame.dispose();
             }
         });

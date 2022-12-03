@@ -131,4 +131,31 @@ public class Metodos_SQL {
     }
 
 
+    public int editarProducto(String id, String nombre, String existencia,String precio, String descripcion){
+        int resultado = 0;
+        Connection connection = null;
+        String queryEditar = ("UPDATE "+ PRODUCTO +" SET "+ PRODUCTO_NOMBRE + " = ?, " + PRODUCTO_EXISTENCIA + " = ?, "
+                + PRODUCTO_PRECIO + " = ?, " + PRODUCTO_DESCRIPCION + " = ? WHERE " + PRODUCTO +"."+PRODUCTO_ID + " = ?");
+
+        try {
+            connection = Conexion.getConnection();
+            preparedStatement = connection.prepareStatement(queryEditar);
+            preparedStatement.setString(1,nombre);
+            preparedStatement.setString(2,existencia);
+            preparedStatement.setString(3,precio);
+            preparedStatement.setString(4,descripcion);
+            preparedStatement.setString(5,id);
+
+
+
+            resultado = preparedStatement.executeUpdate();
+            preparedStatement.close();
+            JOptionPane.showMessageDialog(null, "Producto Editado");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultado;
+    }
+
+
 }
